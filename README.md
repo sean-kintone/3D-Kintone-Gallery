@@ -1,4 +1,5 @@
-# Setup a Kintone Customization Project with Webpack
+# Setup a Kintone Customization Project with React and Webpack
+*React x Kintone Customization Builder & Uploader*
 
 ## Steps
 1. Create a Kintone App
