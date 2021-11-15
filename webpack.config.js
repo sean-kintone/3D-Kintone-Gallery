@@ -5,11 +5,12 @@ module.exports = {
   mode: 'development',
 
   entry: {
-    'index': './src/index.js'
+    // 'index': './src/index.js'
+    entry: path.join(__dirname, 'src', 'index.js'),
   },
 
   output: {
-    filename: '[name].js',
+    // filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
 
@@ -28,6 +29,10 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'] // https://babeljs.io/docs/en/presets/
           }
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       }
     ]
   },
