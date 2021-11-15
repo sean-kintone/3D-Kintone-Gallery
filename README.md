@@ -1,8 +1,5 @@
 # Setup a Kintone Customization Project with Webpack
 
-Original Source (in Japanese):  
-[webpackを利用するkintoneカスタマイズ開発の流れ - Qiita](https://qiita.com/yamaryu0508/items/1abbef9a50e1e7fc3d2f)
-
 ## Steps
 1. `mkdir new-project; cd new-project` & `npm init -y`
 2. Install webpack and webpack-cli.
@@ -25,3 +22,7 @@ Original Source (in Japanese):
 8. Run `npm run build` to create a production version
 9. Upload `./dist/index.js` to Kintone App
    * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
+
+## References
+  * [Setup react with webpack and babel | by Prateek Srivastava | Age of Awareness | Medium](https://medium.com/age-of-awareness/setup-react-with-webpack-and-babel-5114a14a47e9)
+  * [webpackを利用するkintoneカスタマイズ開発の流れ - @yamaryu0508](https://qiita.com/yamaryu0508/items/1abbef9a50e1e7fc3d2f)
