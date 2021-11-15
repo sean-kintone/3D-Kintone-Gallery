@@ -5,12 +5,10 @@ module.exports = {
   mode: 'development',
 
   entry: {
-    // 'index': './src/index.js'
-    entry: path.join(__dirname, 'src', 'index.js'),
+    KintoneCustomization: path.join(__dirname, 'src', 'index.js'),
   },
 
   output: {
-    // filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
 
