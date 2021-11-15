@@ -1,7 +1,8 @@
-// https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
-import React from "react";
-import ReactDOM from "react-dom";
+// https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg
 
 const people = [
   "Siri",
@@ -41,5 +42,9 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
