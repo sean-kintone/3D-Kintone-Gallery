@@ -2,9 +2,7 @@
     "app": "180",
     "scope": "ALL",
     "desktop": {
-        "js": [
-            "dist/KintoneCustomization.js"
-        ],
+        "js": ["dist/KintoneCustomization.js"],
         "css": []
     },
     "mobile": {
