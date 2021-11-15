@@ -43,7 +43,7 @@
 8. Run `npm run production` to create a production version
    * To directly implement the Kintone customization, upload `./dist/KintoneCustomization.js` to Kintone App directly.
    * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
-9. Create the `dest/cutomize-manifest.json`
+9. Create the `dest/customize-manifest.json`
 
    ```json
     {
@@ -61,6 +61,8 @@
     ```
 
 10. Replace `180` with your App ID in `dest/customize-manifest.json`
+    * Do determine your Kintone App ID: Go inside the App, copy the URL, and extract the digits after `https://YOUR_SUBDOMAIN.kintone.com/k/`
+    * Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
 11. Run `npm run start`
     * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
     * Input Kintone credentials when asked
