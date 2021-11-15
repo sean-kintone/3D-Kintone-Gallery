@@ -25,7 +25,7 @@ module.exports = {
         use: {
           loader: 'babel-loader', // https://webpack.js.org/loaders/babel-loader/#root
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env', '@babel/preset-react'] // https://babeljs.io/docs/en/presets/
           }
         }
       }
