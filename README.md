@@ -9,7 +9,7 @@ Original Source (in Japanese):
 
    ```bash
    npm install --save-dev webpack webpack-cli webpack-dev-server
-   npm install --save-dev babel-loader @babel/core @babel/preset-env
+   npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
    npm install --save-dev core-js regenerator-runtime
    npm install --save-dev react react-dom
    npm install --save-dev html-webpack-plugin
