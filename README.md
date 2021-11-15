@@ -12,6 +12,7 @@ Original Source (in Japanese):
    npm install --save-dev babel-loader @babel/core @babel/preset-env
    npm install --save-dev core-js regenerator-runtime
    npm install --save-dev react react-dom
+   npm install --save-dev html-webpack-plugin
    ```
 
 3. Create `webpack.config.js`

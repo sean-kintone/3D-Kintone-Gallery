@@ -1,16 +1,23 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: "development",
 
   entry: {
-    "customize": "./src/customize.js"
+    "index": "./src/index.js"
   },
 
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src", "index.html"),
+    }),
+  ],
 
   resolve: {
     extensions: ['.js', '.json']
