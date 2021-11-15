@@ -14,12 +14,9 @@
 3. Install the dependencies
 
    ```bash
-   npm install --save-dev webpack webpack-cli webpack-dev-server
+   npm install --save-dev webpack webpack-cli html-webpack-plugin style-loader css-loader
    npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
-   npm install --save-dev core-js regenerator-runtime
    npm install --save-dev react react-dom
-   npm install --save-dev html-webpack-plugin
-   npm install --save-dev style-loader css-loader
    npm install --save-dev npm-run-all
 
    npm install -g @kintone/customize-uploader
@@ -43,9 +40,9 @@
    * `index.js`
 7. Run `npm run dev` to continuously generate testing build
 8. Run `npm run production` to create a production version
-9. Upload `./dist/KintoneCustomization.js` to Kintone App directly
+   * To directly implement the Kintone customization, upload `./dist/KintoneCustomization.js` to Kintone App directly.
    * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
-10. Create the `dest/cutomize-manifest.json`
+9. Create the `dest/cutomize-manifest.json`
 
    ```json
     {
@@ -63,7 +60,6 @@
     ```
 
 11. Replace `180` with your App ID in `dest/customize-manifest.json`
-
 12. Run `npm run start`
    * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
    * Input Kintone credentials when asked
@@ -75,8 +71,8 @@
 
 ### Got Errors? - Debugging
   * Verify that you are inputing the exact base URL for Kintone credentials questions
-    * Correct: `https://example.cybozu.com` ✅
-    * Incorrect: `https://example.cybozu.com/` or `example.cybozu.com` ❌
+  * Correct: `https://example.cybozu.com` ✅
+  * Incorrect: `https://example.cybozu.com/` or `example.cybozu.com` ❌
 
 ## References
 

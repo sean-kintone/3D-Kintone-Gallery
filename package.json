@@ -28,6 +28,5 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.64.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0"
   }
 }
