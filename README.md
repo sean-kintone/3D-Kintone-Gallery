@@ -8,15 +8,19 @@ Original Source (in Japanese):
 2. Install webpack and webpack-cli.
 
    ```bash
-   npm install --save-dev webpack webpack-cli
+   npm install --save-dev webpack webpack-cli webpack-dev-server
    npm install --save-dev babel-loader @babel/core @babel/preset-env
    npm install --save-dev core-js regenerator-runtime
+   npm install --save-dev react react-dom
    ```
 
 3. Create `webpack.config.js`
 4. Modify `package.json`
-5. Insert customization into `./src/customize.js`
-6. Run `npm run dev` to create a test version
-7. Run `npm run build` to create a production version
-8. Upload `./dist/customize.js` to Kintone App
+5. Modify template in `./src/`
+   * `index.html`
+   * `index.js`
+6. Insert customization into `./src/index.js`
+7. Run `npm run dev` to create a test version
+8. Run `npm run build` to create a production version
+9. Upload `./dist/index.js` to Kintone App
    * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
