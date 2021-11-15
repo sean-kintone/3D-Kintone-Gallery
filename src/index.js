@@ -26,7 +26,8 @@ import './index.css';
       "Facebook",
       "Twitter",
       "Linkedin",
-      "OMG"
+      "OMG",
+      "Nice"
     ];
 
     function App() {
@@ -41,36 +42,27 @@ import './index.css';
         );
         setSearchResults(results);
       }, [searchTerm]);
-      return ( <
-        div className = "App" >
-        <
-        input type = "text"
-        placeholder = "Search"
-        value = {
-          searchTerm
-        }
-        onChange = {
-          handleChange
-        }
-        /> <
-        ul > {
-          searchResults.map(item => ( <
-            li > {
-              item
-            } < /li>
-          ))
-        } <
-        /ul> <
-        /div>
+      return ( 
+        <div className="App">
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={handleChange}
+        />
+        <ul>
+          {searchResults.map(item => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
       );
     }
 
-    ReactDOM.render( <
-      React.StrictMode >
-      <
-      App / >
-      <
-      /React.StrictMode>,
+    ReactDOM.render(
+      <React.StrictMode >
+        <App />
+      </React.StrictMode>,
       document.getElementById('root')
     );
     return event;
