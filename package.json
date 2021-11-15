@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "upload": "kintone-customize-uploader --watch dest/customize-manifest.json",
     "dev": "webpack server",
     "build": "webpack --mode production"
   },
