@@ -59,10 +59,13 @@
     }
     ```
 
-11. Replace `180` with your App ID in `dest/customize-manifest.json`
-12. Run `npm run start`
-   * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
-   * Input Kintone credentials when asked
+10. Replace `180` with your App ID in `dest/customize-manifest.json`
+11. Run `npm run start`
+    * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
+    * Input Kintone credentials when asked
+12. Refresh the Kintone App to see the changes!
+
+Good luck coding!
 
 ### Example Kintone Credentials
   * ? Input your kintone's base URL (<https://example.cybozu.com>): `https://cafe.kintone.com`
