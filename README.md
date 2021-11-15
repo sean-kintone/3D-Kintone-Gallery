@@ -10,6 +10,7 @@
    npm install --save-dev core-js regenerator-runtime
    npm install --save-dev react react-dom
    npm install --save-dev html-webpack-plugin
+   npm install --save-dev style-loader css-loader
    ```
 
 3. Create `webpack.config.js`
