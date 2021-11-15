@@ -61,7 +61,7 @@
     ```
 
 10. Replace `180` with your App ID in `dest/customize-manifest.json`
-    * Do determine your Kintone App ID: Go inside the App, copy the URL, and extract the digits after `https://YOUR_SUBDOMAIN.kintone.com/k/`
+    * To determine your Kintone App ID: Go inside the App, copy the URL, and extract the digits after `https://YOUR_SUBDOMAIN.kintone.com/k/`
     * Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
 11. Run `npm run start`
     * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
