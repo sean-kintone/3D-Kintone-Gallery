@@ -15,14 +15,13 @@
 
 3. Create `webpack.config.js`
 4. Modify `package.json`
-5. Modify template in `./src/`
+5. Build the customization in the following files inside `./src/`
    * `index.html`
    * `index.js`
-6. Insert customization into `./src/index.js`
-7. Run `npm run dev` to create a test version
-8. Run `npm run build` to create a production version
-9. Upload `./dist/index.js` to Kintone App
-   * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
+6. Run `npm run dev` to create a test version
+7. Run `npm run build` to create a production version
+8. Upload `./dist/KintoneCustomization.js` to Kintone App
+  * For more details, refer to [Customizing an App with JavaScript and CSS](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
 
 ## References
   * [Setup react with webpack and babel | by Prateek Srivastava | Age of Awareness | Medium](https://medium.com/age-of-awareness/setup-react-with-webpack-and-babel-5114a14a47e9)
