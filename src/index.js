@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Original code is by asimdahall
-// https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg
-
 (function () {
   'use strict';
   const customViewID = 5527024; // Replace with your Custom View's ID
@@ -19,15 +16,17 @@ import './index.css';
 
     // const appID = kintone.app.getId();
 
-    const people = [
-      "Siri",
-      "Alexa",
-      "Google",
-      "Facebook",
-      "Twitter",
-      "Linkedin",
-      "OMG",
-      "Nice"
+    const dataSet = [
+      'Tabitha Babbitt',
+      'Nancy Johnson',
+      'Ada Lovelace',
+      'Sarah Mather',
+      'Margaret Knight',
+      'Josephine Cochran',
+      'Mary Walton',
+      'Adeline D. T. Whitney',
+      'Grace Murray Hopper',
+      'Shirley Ann Jackson'
     ];
 
     function App() {
@@ -37,8 +36,8 @@ import './index.css';
         setSearchTerm(e.target.value);
       };
       React.useEffect(() => {
-        const results = people.filter(person =>
-          person.toLowerCase().includes(searchTerm)
+        const results = dataSet.filter(dataRecord =>
+          dataRecord.toLowerCase().includes(searchTerm)
         );
         setSearchResults(results);
       }, [searchTerm]);
