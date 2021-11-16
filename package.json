@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node scripts/npm-start.js",
-    "upload": "kintone-customize-uploader --watch dest/customize-manifest.json",
+    "upload": "kintone-customize-uploader --base-url process.env.KINTONE_DOMAIN --username process.env.KINTONE_USERNAME --password process.env.KINTONE_PASSWORD --watch dest/customize-manifest.json",
     "dev": "npm run build -- --watch",
     "build": "webpack",
     "production": "webpack --mode production"
@@ -17,9 +17,11 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
+    "@kintone/customize-uploader": "^5.0.10",
     "babel-loader": "^8.2.3",
     "core-js": "^3.19.1",
     "css-loader": "^6.5.1",
+    "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
