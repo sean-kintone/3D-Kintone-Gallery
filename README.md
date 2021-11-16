@@ -27,16 +27,17 @@
 5. Modify `package.json` by adding the following scripts
 
    ```json
-     "scripts": {
-       "start": "node scripts/npm-start.js",
-       "upload": "kintone-customize-uploader --watch dest/customize-manifest.json",
-       "dev": "npm run build -- --watch",
-       "build": "webpack",
-       "production": "webpack --mode production"
-     },
+   "scripts": {
+     "start": "node scripts/npm-start.js",
+     "upload": "env-cmd --verbose kintone-customize-uploader --watch dest/customize-manifest.json",
+     "dev": "npm run build -- --watch",
+     "build": "webpack",
+     "production": "webpack --mode production"
+   },
    ```
 
 6. Build the customization in the following files inside `./src/`
+   * `index.css`
    * `index.html`
    * `index.js`
 7. Run `npm run dev` to continuously generate testing build
@@ -63,20 +64,32 @@
 10. Replace `180` with your App ID in `dest/customize-manifest.json`
     * To determine your Kintone App ID: Go inside the App, copy the URL, and extract the digits after `https://YOUR_SUBDOMAIN.kintone.com/k/`
     * Example: `https://YOUR_SUBDOMAIN.kintone.com/k/1/` -> App ID is `1`
-11. Run `npm run start`
+11. Create a `.env` file based on the `.env.example` file
+    * Template
+
+      ```.env
+      KINTONE_BASE_URL=https://example.kintone.com
+      KINTONE_USERNAME=your_username
+      KINTONE_PASSWORD=your_password
+      ```
+
+    * Example
+
+      ```.env
+      KINTONE_BASE_URL=https://cafe.kintone.com
+      KINTONE_USERNAME=Administrator
+      KINTONE_PASSWORD=Kintone!Is!Amazing;
+      ```
+
+12. Run `npm run start`
     * This will trigger webpack & kintone-customize-uploader to run while watching `./src/index.js` for changes
     * Input Kintone credentials when asked
-12. Refresh the Kintone App to see the changes!
+13. Refresh the Kintone App to see the changes!
 
 Good luck coding!
 
-### Example Kintone Credentials
-  * ? Input your kintone's base URL (<https://example.cybozu.com>): `https://cafe.kintone.com`
-  * ? Input your username: `Administrator`
-  * ? Input your password: [input is hidden] `KintoneIsAmazing!`
-
 ### Got Errors? - Debugging
-  * Verify that you are inputing the exact base URL for Kintone credentials questions
+  * Verify that you are inputting the exact base URL for Kintone credentials questions
   * Correct: `https://example.cybozu.com` ✅
   * Incorrect: `https://example.cybozu.com/` or `example.cybozu.com` ❌
 
