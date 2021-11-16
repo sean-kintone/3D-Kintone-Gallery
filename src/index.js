@@ -4,17 +4,19 @@ import './index.css';
 
 (function () {
   'use strict';
-  const customViewID = 5527024; // Replace with your Custom View's ID
 
-  console.log('Script has been loaded!');
+  // Replace with your Custom View's ID
+  const customViewID = 5527028;
+
+  // Increment to confirm script version on Kintone
+  const scriptVer = '1.0.1';
+  console.log(`\nScript version: ${scriptVer}\n\n`);
 
   kintone.events.on('app.record.index.show', function (event) {
     if (event.viewId !== customViewID) {
       console.log('Not on the Custom View');
       return event
     }
-
-    // const appID = kintone.app.getId();
 
     const dataSet = [
       'Tabitha Babbitt',
@@ -41,20 +43,20 @@ import './index.css';
         );
         setSearchResults(results);
       }, [searchTerm]);
-      return ( 
+      return (
         <div className="App">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleChange}
-        />
-        <ul>
-          {searchResults.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={handleChange}
+          />
+          <ul>
+            {searchResults.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
       );
     }
 
