@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Original code is by asimdahall
-// https://dev.to/asimdahall/simple-search-form-in-react-using-hooks-42pg
-
 (function () {
   'use strict';
-  const customViewID = 5527024; // Replace with your Custom View's ID
 
-  console.log('Script has been loaded!');
+  // Replace with your Custom View's ID
+  const customViewID = 5527028;
+
+  // Increment to confirm script version on Kintone
+  const scriptVer = '1.0.1';
+  console.log(`\nScript version: ${scriptVer}\n\n`);
 
   kintone.events.on('app.record.index.show', function (event) {
     if (event.viewId !== customViewID) {
@@ -17,17 +18,17 @@ import './index.css';
       return event
     }
 
-    // const appID = kintone.app.getId();
-
-    const people = [
-      "Siri",
-      "Alexa",
-      "Google",
-      "Facebook",
-      "Twitter",
-      "Linkedin",
-      "OMG",
-      "Nice"
+    const dataSet = [
+      'Tabitha Babbitt',
+      'Nancy Johnson',
+      'Ada Lovelace',
+      'Sarah Mather',
+      'Margaret Knight',
+      'Josephine Cochran',
+      'Mary Walton',
+      'Adeline D. T. Whitney',
+      'Grace Murray Hopper',
+      'Shirley Ann Jackson'
     ];
 
     function App() {
@@ -37,25 +38,25 @@ import './index.css';
         setSearchTerm(e.target.value);
       };
       React.useEffect(() => {
-        const results = people.filter(person =>
-          person.toLowerCase().includes(searchTerm)
+        const results = dataSet.filter(dataRecord =>
+          dataRecord.toLowerCase().includes(searchTerm)
         );
         setSearchResults(results);
       }, [searchTerm]);
-      return ( 
+      return (
         <div className="App">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleChange}
-        />
-        <ul>
-          {searchResults.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={handleChange}
+          />
+          <ul>
+            {searchResults.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
       );
     }
 
