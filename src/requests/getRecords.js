@@ -10,7 +10,7 @@
 
   const body = {
     'app': kintone.app.getId(),
-    'query': 'order by $id asc'
+    'query': kintone.app.getQuery(),
   };
 
   const resp = await kintone.api(kintone.api.url('/k/v1/records', true), 'GET', body

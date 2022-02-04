@@ -47,6 +47,21 @@ import getRecords from './requests/getRecords.js';
         const light = new THREE.AmbientLight(0x404040); // soft white light
         scene.add(light);
 
+        // Magenta-Pink Pointlight
+        var L1 = new THREE.PointLight(0xB887ED, 1.5);
+        L1.position.z = 45;
+        L1.position.y = 20;
+        L1.position.x = 20;
+        scene.add(L1);
+        // Dark Purple Pointlight
+        var L2 = new THREE.PointLight(0x436CE8, 1.5);
+        L2.position.z = 45;
+        L2.position.y = -15;
+        L2.position.x = -20;
+        scene.add(L2);
+
+        let displayShapes = [];
+
         getRecords().then(
           result => {
             result.forEach(shape => {
@@ -57,18 +72,32 @@ import getRecords from './requests/getRecords.js';
                 case "Cube":
                   console.log('cube found... building...');
                   var cubeGeometry = new THREE.BoxGeometry(Number(length), Number(width), Number(depth));
+                  var greyPhongMat = new THREE.MeshPhongMaterial({
+                    color: randomColor,
+                    specular: new THREE.Color("rgb(140,70,140)"),
+                    shininess: 10,
+                    transparent: 1,
+                    opacity: 1,
+                    flatShading: true
+                  });
                   var cubeMaterial = new THREE.MeshBasicMaterial({ color: randomColor });
-                  var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+                  var cube = new THREE.Mesh(cubeGeometry, greyPhongMat);
+                  cube.position.x = Math.random() * 70 - 35;
+                  cube.position.y = Math.random() * 30 - 15;
+                  cube.position.z = Math.random() * 30 - 15;
                   scene.add(cube);
                   displayShapes.push(cube);
                   break;
-                case "Donut":
+                case "Torus":
                   console.log('torus found... building...');
-                  const donutGeometry = new THREE.TorusGeometry(10, 3, 16, 100);
+                  const donutGeometry = new THREE.TorusGeometry(Number(length), Number(width), Number(depth), 100);
                   const donutMaterial = new THREE.MeshStandardMaterial({
                     color: randomColor,
                   });
                   const torus = new THREE.Mesh(donutGeometry, donutMaterial);
+                  torus.position.x = Math.random() * 70 - 35;
+                  torus.position.y = Math.random() * 30 - 15;
+                  torus.position.z = Math.random() * 30 - 15;
                   scene.add(torus);
                   displayShapes.push(torus);
                   break;
@@ -100,11 +129,6 @@ import getRecords from './requests/getRecords.js';
         // Free up memory space when we change pages away.
         return () => mountRef.current.removeChild(renderer.domElement);
       }, []);
-
-      // useEffect(() => {
-      //   console.log("shapes have changed...")
-      //   renderer.render(scene, camera);
-      // }, [shapesArray])
 
       return (
         <div ref={mountRef} className="App">
