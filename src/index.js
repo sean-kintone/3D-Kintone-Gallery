@@ -31,8 +31,8 @@ import getRecords from './requests/getRecords.js';
       useEffect(() => {
         // The Scene, our canvas to display our 3D space.
         var scene = new THREE.Scene();
-        //        const spaceBackground = new THREE.TextureLoader().load('./space.jpeg');
-        //        scene.background = spaceBackground;
+        const spaceBackground = new THREE.TextureLoader().load('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTN8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+        scene.background = spaceBackground;
         // The Camera, our viewpoint in the 3D space.
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         // The Renderer, which calculates how to display our viewpoint, and the shapes.
@@ -41,41 +41,70 @@ import getRecords from './requests/getRecords.js';
         renderer.setSize(window.innerWidth, window.innerHeight);
         // Add it to the DOM
         mountRef.current.appendChild(renderer.domElement);
-
-        var geometry = new THREE.PlaneGeometry(1000, 1000, 1, 1);
-        var material = new THREE.MeshBasicMaterial({ color: 0x00002a });
-        var floor = new THREE.Mesh(geometry, material);
-        floor.material.side = THREE.DoubleSide;
-        floor.position.z = -90;
-        floor.rotation.z = 90;
-        scene.add(floor);
         // Move our camera out a bit.
         camera.position.z = 70;
+        // add a global light
+        const light = new THREE.AmbientLight(0x404040); // soft white light
+        scene.add(light);
+
         getRecords().then(
           result => {
-            setShapesArray(result)
-            console.log(shapesArray);
+            result.forEach(shape => {
+              console.log(shape);
+              let { shapeType, key, length, width, depth } = shape;
+              var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
+              switch (shapeType) {
+                case "Cube":
+                  console.log('cube found... building...');
+                  var cubeGeometry = new THREE.BoxGeometry(Number(length), Number(width), Number(depth));
+                  var cubeMaterial = new THREE.MeshBasicMaterial({ color: randomColor });
+                  var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+                  scene.add(cube);
+                  displayShapes.push(cube);
+                  break;
+                case "Donut":
+                  console.log('torus found... building...');
+                  const donutGeometry = new THREE.TorusGeometry(10, 3, 16, 100);
+                  const donutMaterial = new THREE.MeshStandardMaterial({
+                    color: randomColor,
+                  });
+                  const torus = new THREE.Mesh(donutGeometry, donutMaterial);
+                  scene.add(torus);
+                  displayShapes.push(torus);
+                  break;
+                default:
+                  break;
+              }
+            });
           }
         );
-        // Animation Loop. Rotate the cube on the X and Y axis by 0.01 per frame.
+        // Animation Loop. Rotate the cube on the X and Y axis by 0.0X per frame.
         var animate = function () {
           requestAnimationFrame(animate);
+          scene.traverse(function (node) {
+            if (node instanceof THREE.Mesh) {
+              node.rotation.x += Math.random() / 10;
+              node.rotation.y += Math.random() / 10;
+            }
+          });
           renderer.render(scene, camera);
         };
-
         let onWindowResize = function () {
           camera.aspect = window.innerWidth / window.innerHeight;
           camera.updateProjectionMatrix();
           renderer.setSize(window.innerWidth, window.innerHeight);
         }
-
         window.addEventListener("resize", onWindowResize, false);
-
         // Animate gets called by useEffect on page load.
         animate();
         // Free up memory space when we change pages away.
         return () => mountRef.current.removeChild(renderer.domElement);
       }, []);
+
+      // useEffect(() => {
+      //   console.log("shapes have changed...")
+      //   renderer.render(scene, camera);
+      // }, [shapesArray])
 
       return (
         <div ref={mountRef} className="App">

@@ -22,15 +22,12 @@
   listItemArray = respRecords.map(function (record) {
     return {
       uniqueKey: record.$id.value, // $id = Automatically generated Record ID
-      x: record.x.value,
-      y: record.y.value,
-      z: record.z.value,
-      shape: record.shape.value
+      length: record.length.value,
+      width: record.width.value,
+      depth: record.depth.value,
+      shapeType: record.shape.value
     }
   });
 
-  console.log('listItemArray: \n', listItemArray);
-
-  // Used in setListItems() and setSearchResults() in index.js
   return listItemArray;
 };
