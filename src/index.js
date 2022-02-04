@@ -31,8 +31,8 @@ import getRecords from './requests/getRecords.js';
       useEffect(() => {
         // The Scene, our canvas to display our 3D space.
         var scene = new THREE.Scene();
-//        const spaceBackground = new THREE.TextureLoader().load('./space.jpeg');
-//        scene.background = spaceBackground;
+        //        const spaceBackground = new THREE.TextureLoader().load('./space.jpeg');
+        //        scene.background = spaceBackground;
         // The Camera, our viewpoint in the 3D space.
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         // The Renderer, which calculates how to display our viewpoint, and the shapes.
@@ -43,7 +43,7 @@ import getRecords from './requests/getRecords.js';
         mountRef.current.appendChild(renderer.domElement);
 
         var geometry = new THREE.PlaneGeometry(1000, 1000, 1, 1);
-        var material = new THREE.MeshBasicMaterial({ color: 0x00002a});
+        var material = new THREE.MeshBasicMaterial({ color: 0x00002a });
         var floor = new THREE.Mesh(geometry, material);
         floor.material.side = THREE.DoubleSide;
         floor.position.z = -90;
@@ -51,7 +51,6 @@ import getRecords from './requests/getRecords.js';
         scene.add(floor);
         // Move our camera out a bit.
         camera.position.z = 70;
-        
         getRecords().then(
           result => {
             setShapesArray(result)
