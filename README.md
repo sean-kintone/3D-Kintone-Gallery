@@ -107,14 +107,16 @@ _Built for teamwork, designed by you_ <!-- markdownlint-disable MD036 --> <!-- m
 
 ## Create a Kintone Web Database App
 
-Let's create a Kintone App to list off your favorite [manga](https://en.wikipedia.org/wiki/Manga)s!
+Let's create a Kintone App with some Shapes and Sizes to display!
 
 Here are the required fields & their configurations for our workshop:
 
 | Field Type | Field Name | Field Code | Note               |
 | ---------- | ---------- | ---------- | ------------------ |
-| Text       | Title      | `title`    | The manga's title  |
-| Text       | Author     | `author`   | The manga's author |
+| Dropdown   | Shape      | `shape`    | Cube or Torus?     |
+| Number     | Length     | `length`   | Length of shape    |
+| Number     | Width      | `width`    | Width of shape     |
+| Number     | Depth      | `depth`    | Depth of shape     |
 
 Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://youtu.be/pRtfn-8cf_I) video 📺
 
