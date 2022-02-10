@@ -1,5 +1,7 @@
 # Create a 3D Gallery with React and Three.js for [Kintone Web Database](https://developer.kintone.io/hc/en-us/)
 
+![Banner Image](banner.gif) / ! [](banner.gif)
+
 Thank you for attending our **Kintone x React** workshop!  
 Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Developers/) to check out all of our upcoming events!
 
