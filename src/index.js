@@ -26,8 +26,6 @@ import getRecords from './requests/getRecords.js';
       // Three takes some time to load in. We create a "ref" in advance to tell react / browsers that our canvas will show up here.
       const mountRef = useRef(null);
 
-      const [shapesArray, setShapesArray] = useState([]);
-
       useEffect(() => {
         // The Scene, our canvas to display our 3D space.
         var scene = new THREE.Scene();
