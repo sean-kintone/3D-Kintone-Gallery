@@ -60,18 +60,23 @@ import getRecords from './requests/getRecords.js';
         L2.position.x = -20;
         scene.add(L2);
 
-        let displayShapes = [];
-
+        //Records API call
         getRecords().then(
           result => {
+            //For each shape record
             result.forEach(shape => {
               console.log(shape);
+              //Extract the values
               let { shapeType, key, length, width, depth } = shape;
+              //Choose a random color
               var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
+              //for shapeType Cube, make a cube
               switch (shapeType) {
                 case "Cube":
                   console.log('cube found... building...');
+                  //Wireframe of cube
                   var cubeGeometry = new THREE.BoxGeometry(Number(length), Number(width), Number(depth));
+                  //Shiny skin for cubes
                   var greyPhongMat = new THREE.MeshPhongMaterial({
                     color: randomColor,
                     specular: new THREE.Color("rgb(140,70,140)"),
@@ -80,26 +85,32 @@ import getRecords from './requests/getRecords.js';
                     opacity: 1,
                     flatShading: true
                   });
-                  var cubeMaterial = new THREE.MeshBasicMaterial({ color: randomColor });
+                  //Combine them
                   var cube = new THREE.Mesh(cubeGeometry, greyPhongMat);
+                  //Position it randomly
                   cube.position.x = Math.random() * 70 - 35;
                   cube.position.y = Math.random() * 30 - 15;
                   cube.position.z = Math.random() * 30 - 15;
+                  //Add the cube to the scene
                   scene.add(cube);
-                  displayShapes.push(cube);
                   break;
+                //For torus, create a torus
                 case "Torus":
                   console.log('torus found... building...');
+                  //Create the wireframe
                   const donutGeometry = new THREE.TorusGeometry(Number(length), Number(width), Number(depth), 100);
+                  //Create a flat color skin of a random color
                   const donutMaterial = new THREE.MeshStandardMaterial({
                     color: randomColor,
                   });
+                  //Combine them
                   const torus = new THREE.Mesh(donutGeometry, donutMaterial);
+                  //Position it randomly
                   torus.position.x = Math.random() * 70 - 35;
                   torus.position.y = Math.random() * 30 - 15;
                   torus.position.z = Math.random() * 30 - 15;
+                  //Add it to the scene
                   scene.add(torus);
-                  displayShapes.push(torus);
                   break;
                 default:
                   break;
@@ -110,14 +121,18 @@ import getRecords from './requests/getRecords.js';
         // Animation Loop. Rotate the cube on the X and Y axis by 0.0X per frame.
         var animate = function () {
           requestAnimationFrame(animate);
+          //Go through our entire scene
           scene.traverse(function (node) {
+            //If you find a "mesh"
             if (node instanceof THREE.Mesh) {
+              //Rotate it
               node.rotation.x += Math.random() / 10;
               node.rotation.y += Math.random() / 10;
             }
           });
           renderer.render(scene, camera);
         };
+        //If the window size changes, change the canvas size too
         let onWindowResize = function () {
           camera.aspect = window.innerWidth / window.innerHeight;
           camera.updateProjectionMatrix();
@@ -131,6 +146,7 @@ import getRecords from './requests/getRecords.js';
       }, []);
 
       return (
+        //Our mounted canvas
         <div ref={mountRef} className="App">
         </div>
       );
