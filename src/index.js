@@ -26,6 +26,52 @@ import getRecords from './requests/getRecords.js';
       // Three takes some time to load in. We create a "ref" in advance to tell react / browsers that our canvas will show up here.
       const mountRef = useRef(null);
 
+      const makeCube = (shape) => {
+        //Extract the values
+        let { shapeType, key, length, width, depth } = shape;
+        //Choose a random color
+        var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
+        console.log('cube found... building...');
+        //Wireframe of cube
+        var cubeGeometry = new THREE.BoxGeometry(Number(length), Number(width), Number(depth));
+        //Shiny skin for cubes
+        var greyPhongMat = new THREE.MeshPhongMaterial({
+          color: randomColor,
+          specular: new THREE.Color("rgb(140,70,140)"),
+          shininess: 10,
+          transparent: 1,
+          opacity: 1,
+          flatShading: true
+        });
+        //Combine them
+        var cube = new THREE.Mesh(cubeGeometry, greyPhongMat);
+        //Position it randomly
+        cube.position.x = Math.random() * 70 - 35;
+        cube.position.y = Math.random() * 30 - 15;
+        cube.position.z = Math.random() * 30 - 15;
+        return (cube);
+      }
+
+      const makeTorus = (shape) => {
+        //Extract the values
+        let { shapeType, key, length, width, depth } = shape;
+        //Choose a random color
+        var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
+        console.log('torus found... building...');
+        //Create the wireframe
+        const donutGeometry = new THREE.TorusGeometry(Number(length), Number(width), Number(depth), 100);
+        //Create a flat color skin of a random color
+        const donutMaterial = new THREE.MeshStandardMaterial({
+          color: randomColor,
+        });
+        //Combine them
+        const torus = new THREE.Mesh(donutGeometry, donutMaterial);
+        //Position it randomly
+        torus.position.x = Math.random() * 70 - 35;
+        torus.position.y = Math.random() * 30 - 15;
+        torus.position.z = Math.random() * 30 - 15;
+        return (torus);
+      }
       useEffect(() => {
         // The Scene, our canvas to display our 3D space.
         var scene = new THREE.Scene();
@@ -63,52 +109,14 @@ import getRecords from './requests/getRecords.js';
           result => {
             //For each shape record
             result.forEach(shape => {
-              console.log(shape);
-              //Extract the values
-              let { shapeType, key, length, width, depth } = shape;
-              //Choose a random color
-              var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
               //for shapeType Cube, make a cube
-              switch (shapeType) {
+              switch (shape.shapeType) {
                 case "Cube":
-                  console.log('cube found... building...');
-                  //Wireframe of cube
-                  var cubeGeometry = new THREE.BoxGeometry(Number(length), Number(width), Number(depth));
-                  //Shiny skin for cubes
-                  var greyPhongMat = new THREE.MeshPhongMaterial({
-                    color: randomColor,
-                    specular: new THREE.Color("rgb(140,70,140)"),
-                    shininess: 10,
-                    transparent: 1,
-                    opacity: 1,
-                    flatShading: true
-                  });
-                  //Combine them
-                  var cube = new THREE.Mesh(cubeGeometry, greyPhongMat);
-                  //Position it randomly
-                  cube.position.x = Math.random() * 70 - 35;
-                  cube.position.y = Math.random() * 30 - 15;
-                  cube.position.z = Math.random() * 30 - 15;
-                  //Add the cube to the scene
-                  scene.add(cube);
+                  scene.add(makeCube(shape));
                   break;
                 //For torus, create a torus
                 case "Torus":
-                  console.log('torus found... building...');
-                  //Create the wireframe
-                  const donutGeometry = new THREE.TorusGeometry(Number(length), Number(width), Number(depth), 100);
-                  //Create a flat color skin of a random color
-                  const donutMaterial = new THREE.MeshStandardMaterial({
-                    color: randomColor,
-                  });
-                  //Combine them
-                  const torus = new THREE.Mesh(donutGeometry, donutMaterial);
-                  //Position it randomly
-                  torus.position.x = Math.random() * 70 - 35;
-                  torus.position.y = Math.random() * 30 - 15;
-                  torus.position.z = Math.random() * 30 - 15;
-                  //Add it to the scene
-                  scene.add(torus);
+                  scene.add(makeTorus(shape));
                   break;
                 default:
                   break;
