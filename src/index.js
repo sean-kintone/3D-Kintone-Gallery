@@ -47,7 +47,7 @@ import getRecords from './requests/getRecords.js';
         var cube = new THREE.Mesh(cubeGeometry, greyPhongMat);
         //Position it randomly
         cube.position.x = Math.random() * 70 - 35;
-        cube.position.y = Math.random() * 30 - 15;
+        cube.position.y = Math.random() * 30 - 35;
         cube.position.z = Math.random() * 30 - 15;
         return (cube);
       }
@@ -67,8 +67,8 @@ import getRecords from './requests/getRecords.js';
         //Combine them
         const torus = new THREE.Mesh(donutGeometry, donutMaterial);
         //Position it randomly
-        torus.position.x = Math.random() * 70 - 35;
-        torus.position.y = Math.random() * 30 - 15;
+        torus.position.x = Math.random() * 70 - 5;
+        torus.position.y = Math.random() * 30 - 5;
         torus.position.z = Math.random() * 30 - 15;
         return (torus);
       }
