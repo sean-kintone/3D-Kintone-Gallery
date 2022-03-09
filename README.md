@@ -19,7 +19,6 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
   * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
-* [Appendix](#appendix)
 
 <!-- markdownlint-enable MD007 -->
 
