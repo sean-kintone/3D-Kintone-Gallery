@@ -170,8 +170,8 @@ If you get one of the following error messages, then please verify your `.env` f
 
 ### `npm install` command is not working
 
-1. Verify the Node.js & npm versions **inside** the `Kintone_React_Search_Bar` folder
-2. Just installed Node.js? Verify you configured Node.js versions **inside** the `Kintone_React_Search_Bar` folder
+1. Verify the Node.js & npm versions **inside** the `3D-Kintone-Gallery` folder
+2. Just installed Node.js? Verify you configured Node.js versions **inside** the `3D-Kintone-Gallery` folder
 
 * Mac: `nodenv local 14.5.0`
 * Windows: `nvm use 14.5.0`
@@ -192,13 +192,3 @@ Check out our [Sign up for Kintone Developer Program & Developer License](https:
 * [![https://youtu.be/Gzz8SbTuoFg](https://img.youtube.com/vi/Gzz8SbTuoFg/mq1.jpg)](https://youtu.be/Gzz8SbTuoFg)
 
 ---
-
-## Appendix
-
-| Files                                               | Purpose                                                                       |
-| --------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Install_NodeJS_npm.md](docs/Install_NodeJS_npm.md) | Guide on Installing Node.js & npm                                             |
-| [Workshop.md](docs/Workshop.md)                     | Workshop Overview & Notes                                                     |
-| [References.md](docs/References.md)                 | List of all the articles refereed to when building this project               |
-| [Manga_Data.csv](docs/Manga_Data.csv)               | Manga title and author data that can be uploaded to your Kintone Manga DB App |
-| [CustomizeUploader.md](docs/CustomizeUploader.md)   | Guide on configuring the @kintone/customize-uploader                          |
