@@ -52,8 +52,12 @@ import getRecords from './requests/getRecords.js';
         scene.background = spaceBackground;
 
         // The Camera, our viewpoint in the 3D space.
-        //todo split into seperate lines
-        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var camera = new THREE.PerspectiveCamera(
+          75, // Camera Field of View (FOV)
+          window.innerWidth / window.innerHeight, // aspect — Camera frustum aspect ratio.
+          0.1, //near — Camera frustum near plane.
+          1000 //far — Camera frustum far plane.
+        );
 
         // Set the viewport size to the width and length of our window.
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -108,7 +112,7 @@ import getRecords from './requests/getRecords.js';
                   // EXTRA CHALLENGE: Can you replace the cubeMaterial above with a PhongMaterial? (A shiny skin!)
                   var phongMaterial = new THREE.MeshPhongMaterial({
                     color: null,
-                    specular:  null,
+                    specular: null,
                     shininess: null,
                     transparent: null,
                     opacity: null,
@@ -197,7 +201,7 @@ import getRecords from './requests/getRecords.js';
     }
 
     ReactDOM.render(
-      // React StrictMode is....
+      // React StrictMode activates additional checks useful for debugging. Ignored in production builds!
       <React.StrictMode >
         <App />
       </React.StrictMode>,
