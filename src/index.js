@@ -25,6 +25,8 @@ import getRecords from './requests/getRecords.js';
 
       // Three takes some time to load in. We create a "ref" in advance to tell react / browsers that our canvas will show up here.
       const mountRef = useRef(null);
+      // The Renderer, which calculates how to display our viewpoint, and the shapes.
+      var renderer = new THREE.WebGLRenderer();
       // Add it to the DOM
       mountRef.current.appendChild(renderer.domElement);
 
@@ -41,6 +43,7 @@ import getRecords from './requests/getRecords.js';
 
       //Our useEffect Hook, run once on page load
       useEffect(() => {
+
         // The Scene, our canvas to display our 3D space.
         var scene = new THREE.Scene();
 
@@ -49,10 +52,8 @@ import getRecords from './requests/getRecords.js';
         scene.background = spaceBackground;
 
         // The Camera, our viewpoint in the 3D space.
+        //todo split into seperate lines
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-        // The Renderer, which calculates how to display our viewpoint, and the shapes.
-        var renderer = new THREE.WebGLRenderer();
 
         // Set the viewport size to the width and length of our window.
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -83,8 +84,11 @@ import getRecords from './requests/getRecords.js';
             //For each shape record
             result.forEach(shape => {
               //TODO: Extract the values of our shape
-              let { } = shape;
-              
+              let length = shape.length;
+              let width = shape.width;
+              let depth = shape.depth;
+              let shapeType = shape.shapeType;
+
               // Create some shapes:
               switch (shapeType) {
                 //for shapeType Cube, make a cube
@@ -96,20 +100,25 @@ import getRecords from './requests/getRecords.js';
                   //TODO: Wireframe of cube
                   var cubeGeometry = new THREE.BoxGeometry(null, null, null);
 
-                  //Shiny skin for cubes
-                  var greyPhongMat = new THREE.MeshPhongMaterial({
-                    color: randomColor,
-                    specular: new THREE.Color("rgb(140,70,140)"),
-                    shininess: 10,
-                    transparent: 1,
-                    opacity: 1,
-                    flatShading: true
+                  // TODO: Create a material for our cube
+                  const cubeMaterial = new THREE.MeshStandardMaterial({
+                    color: null,
+                  });
+
+                  // EXTRA CHALLENGE: Can you replace the cubeMaterial above with a PhongMaterial? (A shiny skin!)
+                  var phongMaterial = new THREE.MeshPhongMaterial({
+                    color: null,
+                    specular:  null,
+                    shininess: null,
+                    transparent: null,
+                    opacity: null,
+                    flatShading: null
                   });
 
                   //TODO: Combine them
                   var cube = new THREE.Mesh(null, null);
 
-                  //Position it randomly
+                  //Position it semi-randomly (our camera is at a depth of 70, so less than that is best)
                   cube.position.x = Math.random() * 70 - 35;
                   cube.position.y = Math.random() * 30 - 35;
                   cube.position.z = Math.random() * 30 - 15;
@@ -123,22 +132,23 @@ import getRecords from './requests/getRecords.js';
                   //Choose a random color
                   var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
 
-                  //TODO: Create the wireframe
+                  //TODO: Create the wireframe: 
+                  //TODO explain inline each param
                   const torusGeometry = new THREE.TorusGeometry(null, null, null, 100);
 
                   //TODO: Create a flat color skin of a random color
                   const torusMaterial = new THREE.MeshStandardMaterial({
                     color: null,
                   });
-                  
+
                   //TODO: Combine them
                   const torus = new THREE.Mesh(null, null);
-                  
-                  //Position it randomly
+
+                  //Position it semi-randomly
                   torus.position.x = Math.random() * 70 - 5;
                   torus.position.y = Math.random() * 30 - 5;
                   torus.position.z = Math.random() * 30 - 15;
-                  
+
                   // Add it to the scene!
                   scene.add(torus);
                   break;
@@ -175,7 +185,7 @@ import getRecords from './requests/getRecords.js';
         // Animate gets called by useEffect on page load.
         animate();
 
-        // Free up memory space when we change pages away.
+        // Free up memory space when we change pages away <- A react best practice for "Single Page Apps"
         return () => mountRef.current.removeChild(renderer.domElement);
       }, []);
 
@@ -187,6 +197,7 @@ import getRecords from './requests/getRecords.js';
     }
 
     ReactDOM.render(
+      // React StrictMode is....
       <React.StrictMode >
         <App />
       </React.StrictMode>,
