@@ -192,9 +192,8 @@ Verify that the Custom View (Gallery View) has the following HTML Code:
 ```
 
 ### Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'value')
-* Verify that `cubeGeometry` and `torusGeometry` variables are configured correctly.
-  * The parameters for `THREE.BoxGeometry()` and `THREE.TorusGeometry()` should be set to `width`, `length`, and `depth` variables.
-* There may be incorrect variables set for the `THREE.BoxGeometry()`'s and `THREE.TorusGeometry()`'s parameters if you are getting this error.
+  * There may be incorrect variables set for the `THREE.BoxGeometry()`'s and `THREE.TorusGeometry()`'s parameters if you are getting this error.
+  * Verify that the parameters are only using `width`, `length`, and `depth` variables.
 
 ### How do I get my Kintone Subdomain?
 
