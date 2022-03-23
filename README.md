@@ -123,6 +123,16 @@ Here are the required fields & their configurations for our workshop:
 | Number     | Width      | `width`     | Width of shape                          |
 | Number     | Depth      | `depth`     | Depth of shape                          |
 
+Then create a Custom View
+  * From App Settings, click on the **Views** tab
+  * Click on the Plus Button ⊕ to create a View
+  * Select `Custom view` under **Visible Fields and Column Order** section
+  * Get the `View ID`! (Required in `.env` file)
+  * Under **HTML Code**, input `<div id="root"></div>`
+  * Save!
+
+Be sure to click **Save** and **Activate App** buttons! 💪
+
 Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://youtu.be/pRtfn-8cf_I) video 📺
 
 <!-- ![Create_App_Demo.gif Kintone_React_Workshop v2.1](https://user-images.githubusercontent.com/30670749/125898739-1bc018ac-1740-40e0-91cc-ab829192d2ea.gif) -->
