@@ -136,9 +136,12 @@ import getRecords from './requests/getRecords.js';
                   //Choose a random color
                   var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
 
-                  //TODO explain inline each param
-                  const torusGeometry = new THREE.TorusGeometry(null, null, null, 100);
                   //TODO: Create the wireframe:
+                  // TorusGeometry Parameters:
+                  //  * radius - Radius of the torus
+                  //  * tube - Radius of the tube
+                  //  * radialSegments - Default is 8
+                  const torusGeometry = new THREE.TorusGeometry(null, null, null, 100);
 
                   //TODO: Create a flat color skin of a random color
                   const torusMaterial = new THREE.MeshStandardMaterial({
