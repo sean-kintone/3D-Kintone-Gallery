@@ -14,6 +14,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * [🚀 Getting your FREE Kintone Database](#-getting-your-free-kintone-database)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
 * [Create a `.env` file](#create-a-env-file)
+* [Input the App ID](#input-the-app-id)
 * [Build the customization](#build-the-customization)
 * [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
   * [Errors related to .env](#errors-related-to-env)
@@ -166,6 +167,28 @@ VIEW_ID="1234567"
 [.env.example](.env.example) is used by env-cmd to verify that `.env` file is correctly configured.
 
 ---
+
+## Input the App ID
+
+The Kintone Customize Uploader uses [customize-manifest.json](customize-manifest.json) to determine where to upload the JavaScript file (_which Kintone App_).
+
+```json
+{
+    "app": "23",
+    "scope": "ALL",
+    ...
+```
+
+So to ensure the file gets uploaded to the correct App, replace the `23` with your App ID.
+
+**What is my App ID?** 🤔  
+  * Go to your Kintone App & grab the URL
+  * Kintone App's URL follows this template: `https://<SUBDOMAIN>.kintone.com/k/<App ID>/show#record=<RECORD ID>`
+  * Grab the number between the `/k/`
+  * Example: `https://example.kintone.com/k/1/` -> The App's ID is `1`
+
+---
+
 ## Build the customization
 
 1. Build the customization in the following files inside `./src/`
