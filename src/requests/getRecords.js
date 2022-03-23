@@ -25,7 +25,7 @@
       length: record.length.value,
       width: record.width.value,
       depth: record.depth.value,
-      shapeType: record.shape.value
+      shapeType: record.shapeType.value
     }
   });
 
