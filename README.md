@@ -182,6 +182,13 @@ Verify that you are inputting the exact base URL for Kintone credentials questio
 * Correct: `https://example.cybozu.com` ✅
 * Incorrect: `https://example.cybozu.com/` or `example.cybozu.com` ❌
 
+### Uncaught Error: Target container is not a DOM element
+Verify that the Custom View (Gallery View) has the following HTML Code:
+
+```HTML
+<div id="root"></div>
+```
+
 ### How do I get my Kintone Subdomain?
 
 It might be a bit confusing since you need to sign-up for [Developer Program Account (Website) 🌐](https://bit.ly/KDP_signup) BEFORE creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
