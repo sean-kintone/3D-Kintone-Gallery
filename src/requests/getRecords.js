@@ -2,7 +2,7 @@
 /**
  * Notes on Kintone responses:
  * record.x/y/z.value = value of the x, y, z coordinate fields
- * record.shape.value = the type of shape we will be using
+ * record.shapeType.value = the type of shape we will be using
  * record.$id.value = value of the Record number field (unique key for the record)
  */
 
@@ -25,7 +25,7 @@
       length: record.length.value,
       width: record.width.value,
       depth: record.depth.value,
-      shapeType: record.shape.value
+      shapeType: record.shapeType.value
     }
   });
 
