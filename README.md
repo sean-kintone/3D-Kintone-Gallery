@@ -10,6 +10,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Get Started](#get-started)
   * [⚡ Notes ⚡](#-notes-)
 * [Overview of the Repo](#overview-of-the-repo)
+* [|                                                              |                                                                              |](#--------------------------------------------------------------------------------------------------------------------------------------------)
 * [Kintone Web Database & Credentials](#kintone-web-database--credentials)
   * [🚀 Getting your FREE Kintone Database](#-getting-your-free-kintone-database)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
@@ -18,6 +19,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * [Errors related to .env](#errors-related-to-env)
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
+  * [Uncaught Error: Target container is not a DOM element](#uncaught-error-target-container-is-not-a-dom-element)
   * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
 
 <!-- markdownlint-enable MD007 -->
@@ -112,12 +114,12 @@ Let's create a Kintone App with some Shapes and Sizes to display!
 
 Here are the required fields & their configurations for our workshop:
 
-| Field Type | Field Name | Field Code | Note               |
-| ---------- | ---------- | ---------- | ------------------ |
-| Dropdown   | Shape      | `shape`    | Cube or Torus?     |
-| Number     | Length     | `length`   | Length of shape    |
-| Number     | Width      | `width`    | Width of shape     |
-| Number     | Depth      | `depth`    | Depth of shape     |
+| Field Type | Field Name | Field Code  | Note                              |
+| ---------- | ---------- | ----------- | --------------------------------- |
+| Dropdown   | Shape Type | `shapeType` | Options must be `Cube` or `Torus` |
+| Number     | Length     | `length`    | Length of shape                   |
+| Number     | Width      | `width`     | Width of shape                    |
+| Number     | Depth      | `depth`     | Depth of shape                    |
 
 Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://youtu.be/pRtfn-8cf_I) video 📺
 
