@@ -20,6 +20,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
   * [Uncaught Error: Target container is not a DOM element](#uncaught-error-target-container-is-not-a-dom-element)
+  * [Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'value')](#uncaught-in-promise-typeerror-cannot-read-properties-of-undefined-reading-value)
   * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
 
 <!-- markdownlint-enable MD007 -->
@@ -190,6 +191,11 @@ Verify that the Custom View (Gallery View) has the following HTML Code:
 ```HTML
 <div id="root"></div>
 ```
+
+### Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'value')
+* Verify that `cubeGeometry` and `torusGeometry` variables are configured correctly.
+  * The parameters for `THREE.BoxGeometry()` and `THREE.TorusGeometry()` should be set to `width`, `length`, and `depth` variables.
+* There may be incorrect variables set for the `THREE.BoxGeometry()`'s and `THREE.TorusGeometry()`'s parameters if you are getting this error.
 
 ### How do I get my Kintone Subdomain?
 
