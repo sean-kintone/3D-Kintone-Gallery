@@ -27,8 +27,6 @@ import getRecords from './requests/getRecords.js';
       const mountRef = useRef(null);
       // The Renderer, which calculates how to display our viewpoint, and the shapes.
       var renderer = new THREE.WebGLRenderer();
-      // Add it to the DOM
-      mountRef.current.appendChild(renderer.domElement);
 
       // Extra Challenge: can you refactor the shape creation into these two functions? 🧐🧐
       const makeCube = (shape) => {
@@ -43,6 +41,8 @@ import getRecords from './requests/getRecords.js';
 
       //Our useEffect Hook, run once on page load
       useEffect(() => {
+        // Add it to the DOM
+        mountRef.current.appendChild(renderer.domElement);
 
         // The Scene, our canvas to display our 3D space.
         var scene = new THREE.Scene();
