@@ -87,7 +87,7 @@ import getRecords from './requests/getRecords.js';
           result => {
             //For each shape record
             result.forEach(shape => {
-              //TODO: Extract the values of our shape
+              //Extract the values of our shape from our API call
               let length = Number(shape.length);
               let width = Number(shape.width);
               let depth = Number(shape.depth);
