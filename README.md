@@ -19,7 +19,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
   * [Errors related to .env](#errors-related-to-env)
   * [`npm install` command is not working](#npm-install-command-is-not-working)
-  * [@kintone/customize-uploader not working?](#kintonecustomize-uploader-not-working)
+  * ["npm run upload" failed?](#npm-run-upload-failed)
   * [Uncaught Error: Target container is not a DOM element](#uncaught-error-target-container-is-not-a-dom-element)
   * [Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'value')](#uncaught-in-promise-typeerror-cannot-read-properties-of-undefined-reading-value)
   * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
@@ -228,12 +228,22 @@ If you get one of the following error messages, then please verify your `.env` f
   * Mac: `nodenv local 14.5.0`
   * Windows: `nvm use 14.5.0`
 
-### @kintone/customize-uploader not working?
+### "npm run upload" failed?
+_@kintone/customize-uploader not working?_ Lets try the following:
 
-Verify that you are inputting the exact base URL for Kintone credentials questions
+(1) Verify that customize uploader was installed globally
+  * `npm install -g @kintone/customize-uploader`
 
-  * Correct: `https://example.cybozu.com` ✅
-  * Incorrect: `https://example.cybozu.com/` or `example.cybozu.com` ❌
+(2) Verify that the .env login info is correct (including the password)
+  * ⚠️ Make sure your login info is inside `.env` file & **NOT** `.env.example` file!
+  * ⚠️ Verify that KINTONE_BASE_URL input is correctly formatted:
+    * ✅ Correct Format: `https://example.kintone.com`
+    * ❌ Incorrect Format: `https://example.kintone.com/` or `example.kintone.com`
+  * ⚠️ Re-run the npm commands after saving the .env file
+  * ⚙️ Details: [Create a `.env` file](#create-a-env-file)
+
+(3) Verify your customize-manifest.json was updated with the correct App ID
+  * ⚙️ Details: [Input the App ID](#input-the-app-id)
 
 ### Uncaught Error: Target container is not a DOM element
 Verify that the Custom View (Gallery View) has the following HTML Code:
