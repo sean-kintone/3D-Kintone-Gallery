@@ -27,8 +27,6 @@ import getRecords from './requests/getRecords.js';
       const mountRef = useRef(null);
       // The Renderer, which calculates how to display our viewpoint, and the shapes.
       var renderer = new THREE.WebGLRenderer();
-      // Add it to the DOM
-      mountRef.current.appendChild(renderer.domElement);
 
       // Extra Challenge: can you refactor the shape creation into these two functions? 🧐🧐
       const makeCube = (shape) => {
@@ -43,6 +41,8 @@ import getRecords from './requests/getRecords.js';
 
       //Our useEffect Hook, run once on page load
       useEffect(() => {
+        // Add it to the DOM
+        mountRef.current.appendChild(renderer.domElement);
 
         // The Scene, our canvas to display our 3D space.
         var scene = new THREE.Scene();
@@ -54,9 +54,9 @@ import getRecords from './requests/getRecords.js';
         // The Camera, our viewpoint in the 3D space.
         var camera = new THREE.PerspectiveCamera(
           75, // Camera Field of View (FOV)
-          window.innerWidth / window.innerHeight, // aspect — Camera frustum aspect ratio.
-          0.1, //near — Camera frustum near plane.
-          1000 //far — Camera frustum far plane.
+          window.innerWidth / window.innerHeight, // aspect - Camera frustum aspect ratio.
+          0.1, //near - Camera frustum near plane.
+          1000 //far - Camera frustum far plane.
         );
 
         // Set the viewport size to the width and length of our window.
@@ -88,9 +88,9 @@ import getRecords from './requests/getRecords.js';
             //For each shape record
             result.forEach(shape => {
               //TODO: Extract the values of our shape
-              let length = shape.length;
-              let width = shape.width;
-              let depth = shape.depth;
+              let length = Number(shape.length);
+              let width = Number(shape.width);
+              let depth = Number(shape.depth);
               let shapeType = shape.shapeType;
 
               // Create some shapes:
@@ -136,8 +136,11 @@ import getRecords from './requests/getRecords.js';
                   //Choose a random color
                   var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
 
-                  //TODO: Create the wireframe: 
-                  //TODO explain inline each param
+                  //TODO: Create the wireframe:
+                  // TorusGeometry Parameters:
+                  //  * radius - Radius of the torus
+                  //  * tube - Radius of the tube
+                  //  * radialSegments - Default is 8
                   const torusGeometry = new THREE.TorusGeometry(null, null, null, 100);
 
                   //TODO: Create a flat color skin of a random color
