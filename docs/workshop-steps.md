@@ -148,6 +148,9 @@ Lastly, we combine our `torusGeometry` and `torusMaterial` into a `mesh` and add
 
 ![images/combine-torus.png](images/combine-torus.png)
 
-With this, we can save our work, and run kintone-customize-uploader (See the 3D_Gallery_Slides.pdf for more info!) with `npm run start` in your terminal. Navigate to your app, select the gallery view we created, and enjoy your cool 3D space!
+## Build & Upload the customization
 
----
+With this, we can save our work and run kintone-customize-uploader!
+(See the [3D_Gallery_Slides.pdf](../3D_Gallery_Slides.pdf) for more info!) with `npm run start` in your terminal. Navigate to your app, select the gallery view we created, and enjoy your cool 3D space!
+
+Good luck coding!
