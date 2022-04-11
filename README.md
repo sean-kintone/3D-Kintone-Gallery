@@ -133,7 +133,7 @@ Then create a Custom View
   * Under **HTML Code**, input `<div id="root"></div>`
   * Save!
 
-Be sure to click **Save** and **Activate App** buttons! 💪
+Be sure to click the **Save** and **Activate App** buttons! 💪
 
 Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://youtu.be/pRtfn-8cf_I) video 📺
 
@@ -208,11 +208,11 @@ Good luck coding!
 
 ## Debugging - Let's Fix Those Problems 💪
 
-Here is a rundown of common problems that may occur & its solutions!
+Here is a rundown of common problems that may occur & their solutions!
 
 ### Errors related to .env
 
-If you get one of the following error messages, then please verify your `.env` file has been correctly configured and you have not modified the `.env.example`
+If you get one of the following error messages, then please verify your `.env` file has been correctly configured, and you have not modified the `.env.example`.
 
   * `Failed to find .env file at default paths: [./.env,./.env.js,./.env.json]`
   * `[webpack-cli] Error: Missing environment variable: KINTONE_BASE_URL`
@@ -229,7 +229,7 @@ If you get one of the following error messages, then please verify your `.env` f
   * Windows: `nvm use 14.5.0`
 
 ### "npm run upload" failed?
-_@kintone/customize-uploader not working?_ Lets try the following:
+_@kintone/customize-uploader not working?_ Let's try the following:
 
 (1) Verify that customize uploader was installed globally
   * `npm install -g @kintone/customize-uploader`
