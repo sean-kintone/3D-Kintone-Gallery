@@ -1,7 +1,6 @@
-# Create a 3D Gallery with React and Three.js for [Kintone Web Database](https://developer.kintone.io/hc/en-us/)
+# Create a 3D Gallery with React and Three.js for [Kintone Web Database](https://kintone.dev/en/)
 
-## Outline
-
+## Outline <!-- omit in toc --> <!-- markdownlint-disable MD007 -->
 * [Get Started](#get-started)
 * [Edit your customize-manifest.json](#edit-your-customize-manifest-json)
 * [Edit index.js](#edit-index-js)
