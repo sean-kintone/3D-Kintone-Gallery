@@ -2,8 +2,12 @@
 
 ## Outline <!-- omit in toc --> <!-- markdownlint-disable MD007 -->
 * [Get Started](#get-started)
-* [Edit your customize-manifest.json](#edit-your-customize-manifest-json)
-* [Edit index.js](#edit-index-js)
+* [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
+* [Create a `.env` file](#create-a-env-file)
+* [Edit Your customize-manifest json](#edit-your-customize-manifest-json)
+* [Edit index js](#edit-index-js)
+* [Build & Upload the customization](#build--upload-the-customization)
+<!-- markdownlint-enable MD007 -->
 
 ## Get Started
 
