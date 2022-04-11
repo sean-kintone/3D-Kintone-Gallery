@@ -66,10 +66,21 @@ VIEW_ID="1234567"
 
 ## Edit Your customize-manifest json
 
+First, we need to tell our uploading scripts which Kintone App we will be working on.
+
+```json
+{
+    "app": "23",
+    "scope": "ALL",
+    ...
+```
+
 ![images/customize-manifest.json](images/customize-manifest.png)
 
-First, we need to tell our uploading scripts which Kintone App we will be working on.
-We can find our App ID number easily from the URL of our Kintone App
+We can find our App ID number easily from the URL of our Kintone App.  
+Go to your Kintone App and grab the URL. It should look this: `https://devevents.kintone.com/k/36/`  
+Kintone App's URL follows this template: `https://<SUBDOMAIN>.kintone.com/k/<App ID>/show#record=<RECORD ID>`  
+So then the `https://devevents.kintone.com/k/36/` URL tells us that this App's ID is `36`
 
 ![images/find-app-id.png](images/find-app-id.png)
 
