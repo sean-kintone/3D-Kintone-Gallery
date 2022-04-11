@@ -48,6 +48,22 @@ Be sure to click the **Save** and **Activate App** buttons! 💪
 
 Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://youtu.be/pRtfn-8cf_I) video 📺
 
+## Create a `.env` file
+
+Using the [.env.example](./../.env.example) file as a temple, create a `.env` file that will contain your login credentials and the Kintone App's View ID.
+
+Here is what your `.env` might look like:
+
+```txt
+KINTONE_BASE_URL="https://example.kintone.com"
+KINTONE_USERNAME="example@gmail.com"
+KINTONE_PASSWORD="ILoveKintone!"
+VIEW_ID="1234567"
+```
+
+⚠️ DO NOT DELETE THE [.env.example](./../.env.example) FILE!  
+[.env.example](./../.env.example) is used by env-cmd to verify that `.env` file is correctly configured.
+
 ## Edit Your customize-manifest json
 
 ![images/customize-manifest.json](images/customize-manifest.png)
