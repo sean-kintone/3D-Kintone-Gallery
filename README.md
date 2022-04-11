@@ -78,7 +78,7 @@ npm install -g @kintone/customize-uploader
 | [src/index.css](src/index.css)                               | Styling for the React Project                                                | _Nope_                 |
 | [src/getRecords.js](src/requests/getRecords.js)              | Fetches Kintone records, transforms response, & returns array of objects     | _Nope_                 |
 |                                                              |                                                                              |                        |
-| [Slides.pdf](Slides.pdf)                                     | Workshop presentation's slide deck                                           |                        |
+| [3D_Gallery_Slides.pdf](3D_Gallery_Slides.pdf)               | Workshop presentation's slide deck                                           |                        |
 
 ---
 
