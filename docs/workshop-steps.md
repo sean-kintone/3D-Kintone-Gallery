@@ -88,21 +88,21 @@ So then the `https://devevents.kintone.com/k/36/` URL tells us that this App's I
 
 ## Edit index js
 
-Our example code is mostly filled in and at first glance looks pretty unfamiliar, but fear not! This was mostly taken directly from the [official documentation](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene). We explain the functions and different parts of our code with comments, so make sure to read (and in the future write) the comments.
+Our example code is mostly filled in and, at first glance, looks pretty unfamiliar, but fear not! This was mostly taken directly from the [official documentation](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene). We explain the functions and different parts of our code with comments, so make sure to read (and in the future write) the comments.
 
 The incomplete parts of the code have been marked with TODO comments, as below.
 
 ![images/find-todos.png](images/find-todos.png)
 
-As we already have a working `scene`, `camera`, and `lighting`, all we need are some shapes, specifically cubes and torus.
+As we already have a working `scene`, `camera`, and `lighting`, all we need are some shapes, specifically cubes & torus.
 The code says that we are creating a new `box geometry`, but the values there are null. That seems like a good place to start.
 
-What is a `geometry`? A `geometry` is the mathematical dimensions of the object we want to  display -- how long is it, what is the radius, etc.
+What is a `geometry`? A `geometry` is the mathematical dimensions of the object we want to display -- how long is it, what is the radius, etc.
 The tricky part is what a `geometry` is *not*. The `geometry` is just an invisible wireframe. In order to see our shapes, we'll have to combine them with `material` which is our "skin" around the `geometry`. Our `material` can have color, reflectivity, texture, etc.
 
 For our geometry, how can we know what values to put in? For those of us who are used to thinking in 3D space, it might seem reasonable that a cube should have a width, length, and depth. But let's check to make sure.
 
-First, we hover over the object, to see if our IDE will tell us anything useful:
+First, we hover over the object to see if our IDE will tell us anything useful:
 
 ![images/check-params.png](images/check-params.png)
 
@@ -134,7 +134,7 @@ Hovering with our IDE tells us the order our variable parameters get passed to o
 
 There are some other pre-filled in areas, which position our cube, and later spin it. We recommend checking the documentation and play with the variables after completing this workshop to get more comfortable with THREE.JS.
 
-Now that our cube is completed, we need to repeat the steps with our torus. We'll fill in the missing variables for our `torusGeometry` and `torusMaterial`.
+Now that our cube is completed, we must repeat the steps with our torus. We'll fill in the missing variables for our `torusGeometry` and `torusMaterial`.
 
 `const torusGeometry = new THREE.TorusGeometry(length, width, depth, 100);`
 
