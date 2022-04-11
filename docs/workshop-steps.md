@@ -106,7 +106,7 @@ First, we hover over the object to see if our IDE will tell us anything useful:
 
 ![images/check-params.png](images/check-params.png)
 
-Here our IDE shows us the "constructor", which shows the parameters that can be used to create an object. It looks like our cube can take width, height, length, widthSegments, heightSegments, and lengthSegments, and they are all optional, which is denoted with a question mark.
+Here our IDE shows us the "constructor", which shows the parameters that can be used to create an object. Our cube can take width, height, length, widthSegments, heightSegments, & lengthSegments. They are all optional and are denoted with a question mark.
 
 Great, let's pass in our dimensions:
 
@@ -124,7 +124,7 @@ It looks like our material can take a color parameter. We've used some THREE.JS 
 
 ![images/input-color.png](images/input-color.png)
 
-Definitely feel free to experiment with adding parameters listed in the documentation. THREE.JS is more of an "art" than coding sometimes, and some very fun and beautiful effects can be created with a little effort.
+Definitely feel free to experiment with adding parameters listed in the documentation. THREE.JS is sometimes more of an "art" than coding, and some very fun and beautiful effects can be created with little effort.
 
 Next, we need to combine our `geometry` with our `material` to create a `mesh`, which will get added to our `scene`.
 
@@ -132,7 +132,7 @@ Next, we need to combine our `geometry` with our `material` to create a `mesh`, 
 
 Hovering with our IDE tells us the order our variable parameters get passed to our `mesh`: `cubeGeometry`, `cubeMaterial`.
 
-There are some other pre-filled in areas, which position our cube, and later spin it. We recommend checking the documentation and play with the variables after completing this workshop to get more comfortable with THREE.JS.
+There are some other pre-filled-in areas, which position our cube, and later spin it. After completing this workshop, we recommend checking the documentation and playing with the variables to get more comfortable with THREE.JS.
 
 Now that our cube is completed, we must repeat the steps with our torus. We'll fill in the missing variables for our `torusGeometry` and `torusMaterial`.
 
