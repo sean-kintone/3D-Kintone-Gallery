@@ -102,11 +102,11 @@ import getRecords from './requests/getRecords.js';
                   var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
 
                   //TODO: Wireframe of cube
-                  var cubeGeometry = new THREE.BoxGeometry(null, null, null);
+                  var cubeGeometry = new THREE.BoxGeometry(width, length, depth);
 
                   // TODO: Create a material for our cube
                   const cubeMaterial = new THREE.MeshStandardMaterial({
-                    color: null,
+                    color: randomColor,
                   });
 
                   // EXTRA CHALLENGE: Can you replace the cubeMaterial above with a PhongMaterial? (A shiny skin!)
@@ -120,7 +120,7 @@ import getRecords from './requests/getRecords.js';
                   });
 
                   //TODO: Combine them
-                  var cube = new THREE.Mesh(null, null);
+                  var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 
                   //Position it semi-randomly (our camera is at a depth of 70, so less than that is best)
                   cube.position.x = Math.random() * 70 - 35;
@@ -144,15 +144,15 @@ import getRecords from './requests/getRecords.js';
                   // To simplify the workshop, we're re-using the length, width, and depth
                   // variables from our Kintone app. Advanced users can power-up the Kintone
                   // app to customize variables depending on which shape is created.
-                  const torusGeometry = new THREE.TorusGeometry(null, null, null, 100);
+                  const torusGeometry = new THREE.TorusGeometry(length, width, depth, 100);
 
                   //TODO: Create a flat color skin of a random color
                   const torusMaterial = new THREE.MeshStandardMaterial({
-                    color: null,
+                    color: randomColor,
                   });
 
                   //TODO: Combine them
-                  const torus = new THREE.Mesh(null, null);
+                  const torus = new THREE.Mesh(torusGeometry, torusMaterial);
 
                   //Position it semi-randomly
                   torus.position.x = Math.random() * 70 - 5;
