@@ -102,11 +102,11 @@ import getRecords from './requests/getRecords.js';
                   var randomColor = THREE.MathUtils.randInt(0, 0xffffff)
 
                   //TODO: Wireframe of cube
-                  var cubeGeometry = new THREE.BoxGeometry(width, length, depth);
+                  var cubeGeometry = new THREE.BoxGeometry(null, null, null);
 
                   // TODO: Create a material for our cube
                   const cubeMaterial = new THREE.MeshStandardMaterial({
-                    color: randomColor,
+                    color: null,
                   });
 
                   // EXTRA CHALLENGE: Can you replace the cubeMaterial above with a PhongMaterial? (A shiny skin!)
