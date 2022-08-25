@@ -10,8 +10,7 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
 * [Get Started](#get-started)
   * [⚡ Notes ⚡](#-notes-)
 * [Overview of the Repo](#overview-of-the-repo)
-* [Kintone Web Database & Credentials](#kintone-web-database--credentials)
-  * [🚀 Getting your FREE Kintone Database](#-getting-your-free-kintone-database)
+* [Get Your Free Kintone Database](#get-your-free-kintone-database)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
 * [Create a `.env` file](#create-a-env-file)
 * [Input the App ID](#input-the-app-id)
@@ -22,7 +21,6 @@ Check out [meetup.com/Kintone-Developers](https://www.meetup.com/Kintone-Develop
   * ["npm run upload" failed?](#npm-run-upload-failed)
   * [Uncaught Error: Target container is not a DOM element](#uncaught-error-target-container-is-not-a-dom-element)
   * [Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'value')](#uncaught-in-promise-typeerror-cannot-read-properties-of-undefined-reading-value)
-  * [How do I get my Kintone Subdomain?](#how-do-i-get-my-kintone-subdomain)
 
 <!-- markdownlint-enable MD007 -->
 
@@ -82,33 +80,15 @@ npm install -g @kintone/customize-uploader
 
 ---
 
-## Kintone Web Database & Credentials
+## Get Your Free Kintone Database
 
-_Built for teamwork, designed by you_ <!-- markdownlint-disable MD036 --> <!-- markdownlint-enable MD036 -->
+[bit.ly/KDP_NEW](http://bit.ly/KDP_NEW)
+* ⚡ Only use lowercase, numbers, & hyphens in your subdomain
+* ⚠ Do not use uppercase or special characters
 
-### 🚀 Getting your FREE Kintone Database
-
-#### ① Sign-Up for Developer Program Account (Website) 🌐 <!-- omit in toc -->
-
-* [bit.ly/KDP_signup](https://bit.ly/KDP_signup)
-  * ⚠ Do NOT use Safari
-  * ⚡ Accept Cookies First
-  * ✅ Use Chrome & Firefox
-
-#### ② THEN Create a Kintone Subdomain (Database) 📂 <!-- omit in toc -->
-
-* [bit.ly/K_DevLic](http://bit.ly/K_DevLic)
-  * ⚡ Only use lowercase, numbers, & hyphens in your subdomain
-  * ⚠ Do not use uppercase nor special characters
-
-#### 📺 Sign up for Kintone Developer Program & Developer License | Video <!-- omit in toc -->
-
-<p align="center">
-  <a href="https://youtu.be/Gzz8SbTuoFg">
-    <img height="200" alt="Create Kintone Database App - React Workshop Prep YouTube Thumbnail"
-      src="https://img.youtube.com/vi/Gzz8SbTuoFg/hqdefault.jpg">
-  </a>
-</p>
+|                                             |                                             |
+| ------------------------------------------- | ------------------------------------------- |
+| ![Step 1: Fill out the Kintone Developer license sign up form](./docs/img/SignUp-1.png) | ![Step 2: Email address will be the login name & the subdomain will be your unique link](./docs/img/SignUp-2.png) |
 
 ---
 
@@ -136,8 +116,6 @@ Then create a Custom View
 Be sure to click the **Save** and **Activate App** buttons! 💪
 
 Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://youtu.be/pRtfn-8cf_I) video 📺
-
-<!-- ![Create_App_Demo.gif Kintone_React_Workshop v2.1](https://user-images.githubusercontent.com/30670749/125898739-1bc018ac-1740-40e0-91cc-ab829192d2ea.gif) -->
 
 ### 📺 How to Create a Kintone Database App | Video <!-- omit in toc -->
 
@@ -255,11 +233,3 @@ Verify that the Custom View (Gallery View) has the following HTML Code:
 ### Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'value')
 * There may be incorrect variables set for the `THREE.BoxGeometry()`'s and `THREE.TorusGeometry()`'s parameters if you are getting this error.
 * Verify that the parameters are only using `width`, `length`, and `depth` variables.
-
-### How do I get my Kintone Subdomain?
-
-It might be a bit confusing since you need to sign-up for [Developer Program Account (Website) 🌐](https://bit.ly/KDP_signup) BEFORE creating your [Kintone Subdomain (Database) 📂](http://bit.ly/K_DevLic).
-
-Check out our [Sign up for Kintone Developer Program & Developer License](https://youtu.be/Gzz8SbTuoFg) YouTube video:
-
-[![https://youtu.be/Gzz8SbTuoFg](https://img.youtube.com/vi/Gzz8SbTuoFg/mq1.jpg)](https://youtu.be/Gzz8SbTuoFg)
