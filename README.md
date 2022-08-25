@@ -1,4 +1,4 @@
-# Create a 3D Gallery with React and Three.js for [Kintone Web Database](https://developer.kintone.io/hc/en-us/)
+# Create a 3D Gallery with React and Three.js for [Kintone Web Database](https://kintone.dev)
 
 ![Banner Image](banner.gif)
 
