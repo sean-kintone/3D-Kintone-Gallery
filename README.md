@@ -152,7 +152,7 @@ Confused? 🤔 → Check out the [How to Create a Kintone Database App](https://
 
 ## Create a `.env` file
 
-Using the [.env.example](.env.example) file as a temple, create a `.env` file that will contain your login credentials and the Kintone App's View ID.
+Using the [.env.example](.env.example) file as a template, create a `.env` file that will contain your login credentials and the Kintone App's View ID.
 
 Here is what your `.env` might look like:
 
